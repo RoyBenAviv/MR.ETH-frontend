@@ -1,0 +1,9 @@
+<section class="contact-list">
+    <div class="contact-list-header">
+        <contact-filter></contact-filter>
+        <a routerLink="edit"><img src="../../../assets/images/user.png" /> Add new contact</a>
+    </div>
+        <div>
+            <contact-preview (remove)="onRemove.emit($event)" *ngFor="let contact of contacts" [contact]="contact"></contact-preview>
+        </div>
+</section>

@@ -1,0 +1,135 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: inter-medium;
+  line-height: lh(26px);
+  background: radial-gradient(
+    circle,
+    #7a0078 0%,
+    rgba(29, 29, 29, 1) 56%,
+    rgba(29, 29, 29, 1) 100%
+  );
+  background-position-x: 1000px;
+  background-size: 1100px;
+  background-position-y: -75px;
+  color: $white;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input {
+  font-family: inherit;
+  text-align: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  border-radius: 16px;
+  &.active {
+    background-image: linear-gradient(
+      101.05deg,
+      #1f8ebe -5.36%,
+      #440495 29.46%,
+      #440495 56.03%,
+      #b102cd 81.92%
+    );
+  }
+}
+
+.main-layout {
+  padding: 0 rem(40px);
+}
+
+/// CHART CSS ///
+
+// .home-page {
+
+// }
+
+.ig-tooltip-container {
+  display: none !important;
+}
+.financialChartPrice {
+  margin-top: 30px;
+}
+.financialChartToolbar {
+  .financialChartRangeSelectorLabelSpan,
+  div,
+  label {
+    color: $white !important;
+    border: 1px solid transparent !important;
+  }
+  .financialChartRangeSelectorLabelSpan {
+    background-color: rgba(176, 176, 176, 0.1) !important;
+    border-radius: 8px;
+    font-size: rem(10px);
+    font-family: inter-medium;
+    padding: rem(7px) !important;
+  }
+  label {
+    margin-inline-end: rem(10px);
+  }
+  .financialChartIndicatorMenuDropDownMenu {
+    background: $background !important;
+  }
+
+  background-color: transparent !important;
+  border: 1px solid transparent !important;
+  color: $white !important;
+
+  .financialChartTypePickerDropDownMenu {
+    background-color: $background !important;
+  }
+}
+
+
+
+
+svg {
+  transform: perspective(1000px) rotateX(4deg) rotateY(320deg) rotateZ(4deg) !important;
+}
+g:nth-child(1) {
+  g:nth-child(1)  {
+    path:nth-child(1) {
+    fill: transparent;
+  }
+}
+}

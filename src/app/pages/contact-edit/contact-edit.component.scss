@@ -1,0 +1,36 @@
+@import "../../../assets/styles/setup/mixins";
+@import "../../../assets/styles/setup/functions";
+@import "../../../assets/styles/setup/variables";
+
+.contact-edit {
+    position: fixed;
+    inset: 0;
+    @include flex(column);
+    background-color: rgba(0, 0, 0, 0.71);
+    h2 {
+        text-align: center;
+        @include title;
+        margin-block-start: rem(5px);
+    }
+    form {
+        position: relative;
+        a {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            font-size: rem(20px);
+        }
+        box-shadow: 0px 0px 20px 5px #7a0078;
+        min-height: 500px;
+        @include flex(column, flex-start);
+        @include input;
+        @include container;
+        background-color: rgb(26, 26, 26);
+        padding: rem(35px);
+        gap: rem(50px);
+        button {
+            @include button;
+            margin-block-start: rem(25px);
+        }
+    }
+}

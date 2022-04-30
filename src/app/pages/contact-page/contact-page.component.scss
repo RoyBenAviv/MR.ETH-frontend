@@ -1,0 +1,9 @@
+@import "../../../assets/styles/setup/mixins";
+@import "../../../assets/styles/setup/functions";
+@import "../../../assets/styles/setup/variables";
+
+.contact-page {
+    h1 {
+        @include title;
+    }
+}

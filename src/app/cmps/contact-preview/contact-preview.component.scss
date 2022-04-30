@@ -1,0 +1,67 @@
+@import "../../../assets/styles/setup/mixins";
+@import "../../../assets/styles/setup/functions";
+@import "../../../assets/styles/setup/variables";
+
+.contact-preview {
+ &:hover {
+    .actions {
+        opacity: 1;
+    }
+ }
+  position: relative;
+  @include flex(column);
+  max-width: 120px;
+  text-align: center;
+  background-color: $small-container;
+  border-radius: 14px;
+  padding: rem(20px) rem(12px) rem(12px) rem(12px);
+  .contact-info {
+      position: relative;
+  }
+  .details-link {
+    &:hover {
+        &::before {
+          width: 100%;
+        }
+      }
+      &::before {
+        content: "";
+        display: block;
+        height: 2px;
+        background-color: $white;
+        position: absolute;
+        bottom: -5px;
+        width: 0%;
+  
+        transition: all ease-in-out 250ms;
+      }
+  }
+  img {
+    width: 60px;
+    display: flex;
+    margin: auto;
+  }
+
+  p {
+    width: 90px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis !important;
+    font-size: rem(12px);
+    margin-block-start: rem(3px);
+  }
+  .actions {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    margin-block-start: rem(20px);
+    @include flex(row, space-between);
+    width: 100%;
+    a {
+        
+      cursor: pointer;
+      img {
+        width: 18px;
+      }
+    }
+  }
+}

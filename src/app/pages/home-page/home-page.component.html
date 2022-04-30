@@ -1,0 +1,54 @@
+<section class="home-page">
+  <div class="home-container">
+    <ul>
+      <li>
+        <div class="symbol"><img src="../../../assets/images/money.png" /></div>
+        <div class="stats-information">
+          <p>Total balance:</p>
+          <h2>{{ user?.coins }} ETH</h2>
+        </div>
+      </li>
+      <li>
+        <div class="symbol">
+          <img src="../../../assets/images/wallet.png" />
+        </div>
+        <div class="stats-information">
+          <p>Total trades:</p>
+          <h2>{{ user?.moves.length }} Trades</h2>
+        </div>
+      </li>
+      <li>
+        <div class="symbol"><i class="fa-brands fa-ethereum"></i></div>
+        <div class="stats-information">
+          <p>ETH price</p>
+          <h2 *ngIf="coins">$ {{ coins[0].price }}</h2>
+        </div>
+      </li>
+    </ul>
+    <div class="chart-container">
+      <h2>Portfolios performance</h2>
+      <mp-chart [width]="width" [height]="height"></mp-chart>
+    </div>
+  </div>
+  <aside>
+    <div class="moves">
+      <move-list
+        cmp="home"
+        title="Last trades"
+        [moves]="getMoves()"
+      ></move-list>
+    </div>
+    <div class="other-coins">
+      <h1>Other coins</h1>
+      <ul>
+        <li *ngFor="let coin of coins" class="coin">
+          <div  class="coin-left" *ngIf="coin.symbol !== 'eth'">
+            <img  src="../../../assets/images/{{coin.symbol}}.png" />
+          <p>{{coin.symbol}}</p>
+          </div>
+          <p *ngIf="coin.symbol !== 'eth'">$ {{coin.price}}</p>
+        </li>
+      </ul>
+    </div>
+  </aside>
+</section>

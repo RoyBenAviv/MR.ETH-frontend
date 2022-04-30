@@ -1,0 +1,90 @@
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin container {
+  background: rgba(36 36 36 / 0.8);
+  border-radius: 16px;
+}
+
+@mixin title {
+  text-align: center;
+  font-family: inter-bold;
+  font-size: rem(35px);
+  margin-block-end: rem(20px);
+  background: -webkit-linear-gradient(144deg, $white, $pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin logo {
+  i {
+    font-size: rem(50px);
+    color: #f0c332;
+  }
+  @include flex;
+  gap: rem(14px);
+  font-size: rem(26px);
+  font-family: urbanist-black;
+  span {
+    font-family: urbanist-regular;
+  }
+}
+
+@mixin button {
+  position: relative;
+  z-index: 2;
+  padding: rem(8px) rem(40px);
+  font-family: inter-medium;
+  font-size: rem(18px);
+  background-color: $background;
+  border: 2px solid $pink;
+  border-radius: rem(8px);
+  color: $white;
+  &::after {
+    background: rgba(255, 255, 255, 0.176) none repeat scroll 0 0;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+  }
+  &:hover {
+    &::after {
+      animation: 0.6s ease 0s normal forwards 1 running fillToRight;
+    }
+    background-color: $background;
+  }
+}
+
+@keyframes fillToRight {
+  to {
+    width: 100%;
+  }
+}
+
+@mixin input {
+  label {
+    @include flex;
+    gap: rem(8px);
+    input {
+      background: none;
+      border: none;
+      border-bottom: 2px solid $white;
+      font-family: inter-medium;
+      font-size: rem(16px);
+      color: $white;
+      &::placeholder {
+        font-family: inter-medium;
+        font-size: rem(16px);
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

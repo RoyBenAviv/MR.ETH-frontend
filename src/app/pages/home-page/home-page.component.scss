@@ -1,0 +1,112 @@
+@import "../../../assets/styles/setup/mixins";
+@import "../../../assets/styles/setup/functions";
+@import "../../../assets/styles/setup/variables";
+.home-page {
+  @include flex(row, center, _);
+  margin-block-start: rem(50px);
+  .home-container,
+  .moves,
+  .other-coins {
+    @include container;
+  }
+  .home-container {
+    width: 900px;
+    padding: rem(45px);
+    ul {
+      @include flex(row, space-between);
+      // gap: rem(75px);
+      margin-block-end: rem(45px);
+      li {
+        @include flex;
+        gap: rem(10px);
+        .symbol {
+          width: 60px;
+          height: 60px;
+          @include flex;
+          justify-self: flex-start;
+          background-color: $small-container;
+          border-radius: 14px;
+          img {
+            width: 32px;
+          }
+          i {
+            font-size: rem(32px);
+          }
+        }
+        .stats-information {
+          @include flex(column, flex-start, flex-start);
+          gap: rem(4px);
+          p {
+            font-size: rem(14px);
+          }
+          h2 {
+            font-size: rem(24px);
+            font-family: inter-bold;
+          }
+        }
+      }
+    }
+    .chart-container {
+      h2 {
+        font-family: inter-semi;
+        font-size: rem(20px);
+        margin-block-end: rem(20px);
+      }
+    }
+  }
+  aside {
+    @include flex(column);
+    gap: rem(30px);
+    .moves,
+    .other-coins {
+      max-width: 240px;
+      min-width: 260px;
+      margin-inline-start: rem(35px);
+      padding: rem(20px) rem(30px) rem(30px) rem(30px);
+      height: 100%;
+    }
+    .other-coins {
+      max-height: 250px;
+      padding: rem(20px) rem(10px) rem(5px) rem(20px);
+      h1 {
+        font-size: rem(18px);
+        margin-block-end: rem(20px);
+      }
+      ul {
+        &::-webkit-scrollbar {
+          width: 14px;
+        }
+        &::-webkit-scrollbar-track {
+          background: #ededed;
+          border-radius: 1px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: #818181;
+          border-radius: 1px;
+        }
+        @include flex(column, flex-start, space-between);
+        max-height: 160px;
+        overflow-y: auto;
+        .coin {
+          @include flex(row, space-between);
+          img {
+            width: 24px;
+          }
+          p {
+            padding-inline-end: rem(12px);
+          }
+          .coin-left {
+            @include flex;
+            gap: rem(10px);
+            p {
+              text-transform: uppercase;
+            }
+          }
+        }
+        .coin:not(:first-child) {
+          margin-block-end: rem(20px);
+        }
+      }
+    }
+  }
+}

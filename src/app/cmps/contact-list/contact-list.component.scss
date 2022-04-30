@@ -1,0 +1,26 @@
+@import "../../../assets/styles/setup/mixins";
+@import "../../../assets/styles/setup/functions";
+@import "../../../assets/styles/setup/variables";
+
+.contact-list {
+    .contact-list-header {
+        @include flex(row, space-between);
+        padding: rem(20px) 0;
+        a {
+            @include flex;
+            gap: rem(5px);
+            img {
+                width: 20px;
+            }
+        }
+    }
+    max-width: 1200px;
+    @include container;
+    padding: rem(45px);
+    padding-block-start: 0;
+    div {
+        @include flex;
+        flex-wrap: wrap;
+        gap: rem(45px);
+    }
+}

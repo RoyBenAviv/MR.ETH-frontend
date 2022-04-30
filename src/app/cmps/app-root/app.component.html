@@ -1,0 +1,17 @@
+<section class="main-app main-layout">
+    <app-header></app-header>
+    <section class="app-container">
+            <nav>
+                <ul>
+                    <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><i class="fa-solid fa-chart-line"></i><span>Profile</span></a></li>
+                    <li><a routerLink="contacts" routerLinkActive="active"><img src="../../../assets/images/trade.png" /><span>Trade</span></a></li>
+                    <li><a routerLink="dashboard" routerLinkActive="active"><img src="../../../assets/images/dashboard.png" /> Dashboard</a></li>
+                    <li><a><img src="../../../assets/images/donate.png" /><span>Deposite</span></a></li>
+                </ul>
+            </nav>
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+        
+    </section>
+</section>

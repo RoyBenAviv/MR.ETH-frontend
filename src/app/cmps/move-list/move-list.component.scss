@@ -1,0 +1,38 @@
+@import "../../../assets/styles/setup/mixins";
+@import "../../../assets/styles/setup/functions";
+@import "../../../assets/styles/setup/variables";
+
+.move-list {
+  &.ml-home {
+    h1 {
+      font-size: rem(18px);
+      margin-block-end: rem(20px);
+    }
+    .move-list-container {
+      @include flex(column);
+
+      gap: rem(30px);
+      .contact-info {
+        img {
+          width: 37px;
+          height: 37px;
+          border-radius: 50%;
+          border: 2px solid $white;
+        }
+        @include flex;
+        gap: rem(20px);
+        .move-info {
+          h3 {
+            font-size: rem(16px);
+          }
+          h4 {
+            text-align: right;
+            margin-block-start: rem(3px);
+            font-family: inter-semi;
+            font-size: rem(12px);
+          }
+        }
+      }
+    }
+  }
+}

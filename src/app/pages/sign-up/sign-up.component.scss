@@ -1,0 +1,27 @@
+@import "../../../assets/styles/setup/mixins";
+@import "../../../assets/styles/setup/functions";
+@import "../../../assets/styles/setup/variables";
+
+.sign-up {
+    overflow: hidden;
+    @include flex;
+    
+    position: absolute;
+    inset: 0;
+    background-color: $background;
+    .lottie-container {
+        flex-basis: 10%;
+    }
+    .left-container {
+        @include flex(column);
+        gap: rem(20px);
+        flex-basis: 90%;
+        .logo {
+            @include logo;
+            i {
+                font-size: rem(90px);
+            }
+            font-size: rem(70px);
+        }
+    }
+}

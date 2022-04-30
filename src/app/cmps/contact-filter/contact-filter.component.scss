@@ -1,0 +1,10 @@
+@import "../../../assets/styles/setup/mixins";
+@import "../../../assets/styles/setup/functions";
+@import "../../../assets/styles/setup/variables";
+
+.contact-filter {
+    @include input;
+    img {
+        width: 20px;
+    }
+}

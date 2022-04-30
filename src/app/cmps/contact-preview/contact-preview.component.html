@@ -1,0 +1,12 @@
+<section class="contact-preview">
+    <div class="contact-info">
+        <a class="details-link" routerLink="/contact/{{contact._id}}">
+            <img src="https://robohash.org/set_set5/{{contact._id}}.png" alt="img" />
+            <p [title]="contact.name">{{contact.name}}</p>
+        </a>
+    </div>
+    <div class="actions">
+        <a title="Edit friend details" [routerLink]="['edit', contact._id]"><img src="../../../assets//images/edit.png" /></a>
+        <a title="Delete friend" (click)="onRemoveContact($event, contact._id)" class="remove-btn"><img src="../../../assets//images/trash.png" /></a>
+    </div>
+</section>

@@ -1,0 +1,27 @@
+@import "../../../assets/styles/setup/mixins";
+@import "../../../assets/styles/setup/functions";
+@import "../../../assets/styles/setup/variables";
+.app-header {
+  @include flex(row, space-between);
+  padding-block-start: rem(50px);
+  .logo {
+    @include logo;
+  }
+  // .user-name {
+  //   font-family: roboto-bold;
+  // }
+  .user-profile {
+      @include flex;
+      gap: rem(24px);
+      img {
+          width: 37px;
+          height: 37px;
+          border: 2px solid $grey;
+          border-radius: 50%;
+      }
+      p {
+          font-size: rem(18px);
+          color: $grey;
+      }
+  }
+}

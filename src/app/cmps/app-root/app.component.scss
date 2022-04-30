@@ -1,0 +1,35 @@
+@import "../../../assets/styles/setup/mixins";
+@import "../../../assets/styles/setup/functions";
+@import "../../../assets/styles/setup/variables";
+
+.main-app {
+    min-height: 100vh;
+    .app-container {
+        display: flex;
+        gap: rem(35px);
+        main {
+            margin: auto;
+        }
+        nav {
+            margin-block-start: rem(50px);
+            ul {
+                @include flex(column, center, flex-start);
+                gap: rem(18px);
+                font-size: 18px;
+                color: $grey;
+                li {
+                    a {
+                        padding-inline-start: 25px;
+                        width: 200px;
+                        height: 50px;
+                        @include flex(row, flex-start);
+                        gap: rem(20px);
+                        img {
+                            width: 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
