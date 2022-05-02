@@ -3,6 +3,9 @@
 @import "../../../assets/styles/setup/variables";
 
 .home-page {
+  @media (max-width: 1400px) {
+    margin-block-end: rem(40px);
+  }
   display: grid;
   grid-gap: rem(20px);
   grid-template-columns: repeat(4, 1fr);
@@ -12,14 +15,24 @@
                         "home home home coins";
   
   @media (max-width: 1400px) {
-     grid-template-columns: repeat(4, 1fr);
         grid-template-areas: "home home home home"
                               "home home home home"
                               "coins coins moves moves";
   }
 
+  @media (max-width: 660px) {
+       grid-template-areas: "home home home home"
+                            "coins coins coins coins"
+                            "moves moves moves moves"
+ }
+
   .moves {
     grid-area: moves;
+    min-height: 260px;
+    min-width: 300px;
+    @media (max-width: 1400px) {
+      min-height: 100%;
+    }
   }
   .other-coins {
     grid-area: coins;
@@ -27,13 +40,13 @@
 
   .home-container {
     grid-area: home;
-    width: 900px;
-    @media (max-width: 1300px) {
-      width: 800px;
-    }
-    @media (max-width: 1110px) {
-      width: 100%;
-    }
+    // width: 900px;
+    // @media (max-width: 1300px) {
+    //   width: 800px;
+    // }
+    // @media (max-width: 1110px) {
+    //   width: 100%;
+    // }
   }
 
   margin-block-start: rem(50px);
@@ -49,7 +62,9 @@
       margin-block-end: rem(45px);
       @media (max-width: 1100px) {
         gap: rem(30px);
-        white-space: nowrap;
+      }
+      @media (max-width: 550px) {
+        flex-direction: column;
       }
       li {
         @include flex;
@@ -64,7 +79,9 @@
           justify-self: flex-start;
           background-color: $small-container;
           border-radius: 14px;
-
+          @media (max-width: 520px) {
+            // display: none;
+          }
           img {
             width: 32px;
           }

@@ -49,6 +49,15 @@
         "wiki wiki wiki wiki";
         padding: 0 rem(10px);
     }
+    @media (max-width: 730px) {
+        grid-template-areas:
+        "mp mp mp mp"
+        "info info bc bc"
+        "pie pie pie pie"
+        "vs vs vs vs"
+        "bars bars bars bars"
+        "wiki wiki wiki wiki";
+    }
 
     .mp {
         margin-block-start: rem(50px);
