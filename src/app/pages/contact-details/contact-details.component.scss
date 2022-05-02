@@ -1,0 +1,54 @@
+@import "../../../assets/styles/setup/mixins";
+@import "../../../assets/styles/setup/functions";
+@import "../../../assets/styles/setup/variables";
+
+.contact-details {
+    h1 {
+        @include title;
+    }
+    .contact-container {
+        @include flex(row, center, _);
+        gap: rem(30px);
+    }
+    .contact-info, .transfer-fund, .move-list {
+        @include container;
+        padding: rem(30px);
+    }
+
+    .transfer-fund, .move-list {
+        width: 280px;
+    }
+    .move-list {
+        min-height: 330px;
+    }
+
+    .contact-info {
+        .profile {
+            display: flex;
+            margin: auto;
+            padding-block-end: rem(40px);
+            width: 300px;
+        }
+        .email, .phone {
+            width: 24px;
+        }
+        p {
+            @include flex(row, flex-start);
+            gap: rem(20px);
+            margin-block-end: rem(10px);
+        }
+    }
+
+    .trade-container {
+        @include flex(column, flex-start);
+        gap: rem(40px);
+        height: 100%;
+    }
+    button {
+        @include button;
+        display: flex;
+        margin: rem(20px) auto;
+
+
+    }
+}

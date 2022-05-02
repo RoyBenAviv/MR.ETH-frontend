@@ -10,20 +10,21 @@ import { Observable } from 'rxjs';
 })
 export class ContactPageComponent implements OnInit {
   constructor(private contactService: ContactService) {}
-  contacts: Contact[];
+  contacts: Contact[] = [];
   contacts$: Observable<Contact[]>;
   ngOnInit(): void {
-    this.contactService.loadContacts().subscribe(contacts => {
-        this.contacts = contacts
-        console.log('contacts',contacts);
+    this.loadContacts()
 
-    });
-    // this.contacts$ = this.contactService.contacts$;
-    // console.log('this.contacts$',this.contacts$);
+  }
+
+  loadContacts() {
+    this.contactService.loadContacts()
+    this.contactService.contacts$.subscribe(data =>{
+      this.contacts = data
+  });
   }
 
   onRemoveContact(contactId: string) {
     this.contactService.deleteContact(contactId)
-
 }
 }

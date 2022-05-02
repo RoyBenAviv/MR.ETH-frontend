@@ -5,8 +5,9 @@
                 <ul>
                     <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><i class="fa-solid fa-chart-line"></i><span>Profile</span></a></li>
                     <li><a routerLink="contacts" routerLinkActive="active"><img src="../../../assets/images/trade.png" /><span>Trade</span></a></li>
-                    <li><a routerLink="dashboard" routerLinkActive="active"><img src="../../../assets/images/dashboard.png" /> Dashboard</a></li>
+                    <li><a routerLink="dashboard" routerLinkActive="active"><img src="../../../assets/images/dashboard.png" /> <span>Dashboard</span></a></li>
                     <li><a><img src="../../../assets/images/donate.png" /><span>Deposite</span></a></li>
+                    <li class="logout" (click)="logout()"><a><img src="../../../assets/images/logout.png"/><span>Log Out</span></a></li>
                 </ul>
             </nav>
         <main>

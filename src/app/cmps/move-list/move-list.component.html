@@ -1,11 +1,11 @@
 <section
-  [ngClass]="cmp === 'dashboard' ? 'ml-dashboard' : 'ml-home'"
+  [ngClass]="cmp === 'details' ? 'ml-details' : 'ml-home'"
   class="move-list"
 >
   <h1>{{ title }}</h1>
   <div class="move-list-container">
     <div class="contact-info" *ngFor="let move of moves">
-      <img src="https://robohash.org/set_set5/{{ move.to }}.png" alt="img" />
+      <img src="https://robohash.org/set_set5/{{ move.toId }}.png" alt="img" />
       <div class="move-info">
           <h3>{{ move.to }}</h3>
           <h4>{{ move.amount }}.00 ETH</h4>
@@ -14,6 +14,8 @@
     </div>
   </div>
   <div *ngIf="moves.length === 0">
-    <p>There are no transactions on this account.</p>
+    <p>There are no transactions <span *ngIf="cmp === 'home'">on this account.</span>
+      <span *ngIf="cmp === 'details'">to this contact.</span>
+    </p>
   </div>
 </section>

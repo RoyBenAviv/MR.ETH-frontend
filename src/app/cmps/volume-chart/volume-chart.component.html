@@ -1,0 +1,10 @@
+<div class="volume-chart">
+    <div *ngIf="data" class="container">
+        <igx-category-chart  height="320px" width="100%"
+            [dataSource]="data"
+            chartType="Column"
+            yAxisMajorStrokeThickness="0.08"
+            >
+        </igx-category-chart>
+        </div>
+</div>

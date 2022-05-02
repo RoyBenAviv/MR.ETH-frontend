@@ -1,20 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user.model';
 import { EthereumService } from 'src/app/services/ethereum.service';
 import { Coin } from 'src/app/models/coin.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss'],
 })
-export class HomePageComponent implements OnInit {
-  constructor(
-    private userService: UserService,
-    private ethereumService: EthereumService
-  ) {}
-
+export class HomePageComponent implements OnInit, OnDestroy {
+  constructor(private userService: UserService,private ethereumService: EthereumService) {}
+  subscription: Subscription
   coins: Array<Coin>;
   user: User;
   width: string = '746px';
@@ -22,21 +20,19 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRates();
-    // this.getMarketCap()
-    this.userService.user$.subscribe((user) => {
+    this.subscription = this.userService.user$.subscribe((user) => {
       this.user = user;
     });
   }
 
+  
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe()
+}
+
   getMoves(): any[] {
     return this.user.moves.slice(0, 3);
   }
-
-  // getMarketCap(): void {
-  //   this.ethereumService.getMarketCap().subscribe(marketCap => {
-  //     console.log('marketCap',marketCap);
-  //   })
-  // }
 
   getRates(): void {
     this.ethereumService.getRates().subscribe((coins) => {

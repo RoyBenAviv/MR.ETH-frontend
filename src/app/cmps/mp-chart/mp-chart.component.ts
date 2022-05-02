@@ -14,9 +14,7 @@ export class MpChartComponent implements OnInit {
   ngOnInit(): void {
     this.getMarketPrice()
   }
-  @Input() width: string 
-  @Input() height: string
-
+  @Input() cmp: string
   getMarketPrice() {
     this.ethereumService.getMarketPrice().subscribe(ethMP => {
       this.ethMP = ethMP.map(data => {

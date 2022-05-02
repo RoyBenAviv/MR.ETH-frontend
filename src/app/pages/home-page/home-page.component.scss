@@ -14,7 +14,6 @@
     padding: rem(45px);
     ul {
       @include flex(row, space-between);
-      // gap: rem(75px);
       margin-block-end: rem(45px);
       li {
         @include flex;
@@ -73,17 +72,7 @@
         margin-block-end: rem(20px);
       }
       ul {
-        &::-webkit-scrollbar {
-          width: 14px;
-        }
-        &::-webkit-scrollbar-track {
-          background: #ededed;
-          border-radius: 1px;
-        }
-        &::-webkit-scrollbar-thumb {
-          background: #818181;
-          border-radius: 1px;
-        }
+        @include scrollbar;
         @include flex(column, flex-start, space-between);
         max-height: 160px;
         overflow-y: auto;

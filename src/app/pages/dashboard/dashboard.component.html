@@ -1,4 +1,100 @@
 <section class="dashboard">
-<mp-chart cmp="dashboard" [width]="width" [height]="height"></mp-chart>
-<compare-chart></compare-chart>
+  <div class="mp">
+    <h1>Ethereum Marketcap</h1>
+    <mp-chart cmp="dashboard"></mp-chart>
+  </div>
+
+  <div class="ethereum-info">
+    <h1>Ethereum Today</h1>
+    <div>
+      <p>Current price:</p>
+      <span>{{ cryptoInfo?.ETH.USD.PRICE }}</span>
+    </div>
+    <div>
+      <p>Highest today:</p>
+      <span>{{ cryptoInfo?.ETH.USD.HIGHDAY }}</span>
+    </div>
+    <div>
+      <p>Lowest today:</p>
+      <span>{{ cryptoInfo?.ETH.USD.LOWDAY }}</span>
+    </div>
+    <div>
+      <p>Change in the last day:</p>
+      <span>{{ cryptoInfo?.ETH.USD.CHANGEDAY }}</span>
+    </div>
+    <div>
+      <p>Total marketcap:</p>
+      <span>{{ cryptoInfo?.ETH.USD.MKTCAP }}</span>
+    </div>
+  </div>
+
+  <div class="blockchain-info">
+    <h1>Ethereum Blockchain</h1>
+    <div>
+      <p>Active addresses:</p>
+      <span>{{ ethBCData?.active_addresses }}</span>
+    </div>
+    <div>
+      <p>New addresses today:</p>
+      <span>{{ ethBCData?.new_addresses }}</span>
+    </div>
+    <div>
+      <p>Transaction count:</p>
+      <span>{{ ethBCData?.transaction_count }}</span>
+    </div>
+    <div>
+      <p>Average transaction value:</p>
+      <span>{{ ethBCData?.average_transaction_value | number }}ETH</span>
+    </div>
+    <div>
+      <p>Hashrate:</p>
+      <span>{{ ethBCData?.hashrate | number }}</span>
+    </div>
+  </div>
+  <div class="compare">
+    <h1>Ethereum VS Bitcoin</h1>
+    <compare-chart></compare-chart>
+  </div>
+  <div class="volume">
+    <h1>Ethereum Volume</h1>
+    <volume-chart></volume-chart>
+  </div>
+  <div class="cryptos">
+    <h1>Ethereum dominance</h1>
+    <cryptos-chart></cryptos-chart>
+  </div>
+
+  <div class="what-is-eth">
+    <h1>What Is Ethereum? (ETH)</h1>
+    <p>
+      Ethereum is a decentralized open-source blockchain system that features
+      its own cryptocurrency, Ether. ETH works as a platform for numerous other
+      cryptocurrencies, as well as for the execution of decentralized smart
+      contracts.
+    </p>
+    <p>
+      Ethereum was first described in a 2013 whitepaper by Vitalik Buterin.
+      Buterin, along with other co-founders, secured funding for the project in
+      an online public crowd sale in the summer of 2014. The project team
+      managed to raise $18.3 million in Bitcoin, and Ethereum’s price in the
+      Initial Coin Offering (ICO) was $0.311, with over 60 million Ether sold.
+      Taking Ethereum’s price now, this puts the return on investment (ROI) at
+      an annualized rate of over 270%, essentially almost quadrupling your
+      investment every year since the summer of 2014.
+    </p>
+    <p>
+      The Ethereum Foundation officially launched the blockchain on July 30,
+      2015, under the prototype codenamed “Frontier.” Since then, there has been
+      several network updates — “Constantinople” on Feb. 28, 2019, “Istanbul” on
+      Dec. 8, 2019, “Muir Glacier” on Jan. 2, 2020, “Berlin” on April 14, 2021,
+      and most recently on Aug. 5, 2021, the “London” hard fork.
+    </p>
+
+    <p>
+      Ethereum’s own purported goal is to become a global platform for
+      decentralized applications, allowing users from all over the world to
+      write and run software that is resistant to censorship, downtime and
+      fraud.
+    </p>
+  </div>
 </section>

@@ -17,7 +17,7 @@ export class ContactDetailsComponent implements OnInit {
   ) {}
   user: User;
   contact: Contact;
-  title: string = 'Your moves:';
+  title: string = 'Your trades:';
 
   ngOnInit(): void {
     this.route.data.subscribe((data) => {

@@ -34,6 +34,20 @@
   }
 }
 
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 14px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #ededed;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #6d0369;;
+    border-radius: 10px;
+  }
+}
+
 @mixin button {
   position: relative;
   z-index: 2;

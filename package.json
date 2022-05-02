@@ -6,24 +6,27 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "heroku-postbuild": "ng build — prod"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~13.3.0",
+    "@angular/cli": "~13.3.3",
     "@angular/common": "~13.3.0",
     "@angular/compiler": "~13.3.0",
+    "@angular/compiler-cli": "~13.3.0",
     "@angular/core": "~13.3.0",
     "@angular/forms": "~13.3.0",
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
     "@syncfusion/ej2-angular-base": "^20.1.48",
-    "chart.js": "^2.9.3",
     "igniteui-angular-charts": "^13.1.1",
     "ngx-lottie": "^8.2.0",
-    "rxjs": "~6.6.0",
+    "rxjs": "^7.5.5",
     "tslib": "^2.3.0",
+    "typescript": "~4.6.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

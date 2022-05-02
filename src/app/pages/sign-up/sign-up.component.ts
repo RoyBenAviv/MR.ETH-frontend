@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { lastValueFrom } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'sign-up',
@@ -15,7 +16,7 @@ export class SignUpComponent implements OnInit {
   username: string = ''
 
   async signup() {
-    await this.userService.signup(this.username).toPromise()
+    await lastValueFrom(this.userService.signup(this.username))
     this.router.navigateByUrl('')
   }
 

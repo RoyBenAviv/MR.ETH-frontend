@@ -6,10 +6,9 @@
 
 html {
   font-family: inter-medium;
-  line-height: lh(26px);
   background: radial-gradient(
     circle,
-    #7a0078 0%,
+    #6d0369 0%,
     rgba(29, 29, 29, 1) 56%,
     rgba(29, 29, 29, 1) 100%
   );
@@ -76,6 +75,12 @@ a {
 
 .main-layout {
   padding: 0 rem(40px);
+  @media (max-width: 800px) {
+    padding: 0 rem(20px);
+  }
+  @media (max-width: 450px) {
+    padding: 0;
+  }
 }
 
 /// CHART CSS ///
@@ -84,52 +89,18 @@ a {
 
 // }
 
-.ig-tooltip-container {
-  display: none !important;
-}
-.financialChartPrice {
-  margin-top: 30px;
-}
-.financialChartToolbar {
-  .financialChartRangeSelectorLabelSpan,
-  div,
-  label {
-    color: $white !important;
-    border: 1px solid transparent !important;
-  }
-  .financialChartRangeSelectorLabelSpan {
-    background-color: rgba(176, 176, 176, 0.1) !important;
-    border-radius: 8px;
-    font-size: rem(10px);
-    font-family: inter-medium;
-    padding: rem(7px) !important;
-  }
-  label {
-    margin-inline-end: rem(10px);
-  }
-  .financialChartIndicatorMenuDropDownMenu {
-    background: $background !important;
-  }
-
-  background-color: transparent !important;
-  border: 1px solid transparent !important;
-  color: $white !important;
-
-  .financialChartTypePickerDropDownMenu {
-    background-color: $background !important;
-  }
-}
 
 
 
 
-svg {
-  transform: perspective(1000px) rotateX(4deg) rotateY(320deg) rotateZ(4deg) !important;
-}
-g:nth-child(1) {
-  g:nth-child(1)  {
-    path:nth-child(1) {
-    fill: transparent;
-  }
-}
-}
+
+// svg {
+//   transform: perspective(1000px) rotateX(4deg) rotateY(320deg) rotateZ(4deg) !important;
+// }
+// g:nth-child(1) {
+//   g:nth-child(1)  {
+//     path:nth-child(1) {
+//     fill: transparent;
+//   }
+// }
+// }

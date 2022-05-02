@@ -13,7 +13,12 @@ import { MpChartComponent } from './cmps/mp-chart/mp-chart.component';
 import { FormsModule } from '@angular/forms';
 import { 
 	IgxFinancialChartModule,
-	IgxLegendModule
+  IgxCategoryChartModule,
+	IgxLegendModule,
+  IgxDoughnutChartModule,
+	IgxRingSeriesModule,
+  IgxItemLegendModule,
+  IgxPieChartModule,
  } from "igniteui-angular-charts";
 import { ContactDetailsComponent } from './pages/contact-details/contact-details.component';
 import { ContactEditComponent } from './pages/contact-edit/contact-edit.component';
@@ -24,6 +29,8 @@ import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.compon
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
 import { CompareChartComponent } from './cmps/compare-chart/compare-chart.component';
+import { VolumeChartComponent } from './cmps/volume-chart/volume-chart.component';
+import { CryptosChartComponent } from './cmps/cryptos-chart/cryptos-chart.component';
 
 export function playerFactory() {
   return player;
@@ -46,6 +53,8 @@ export function playerFactory() {
     MoveListComponent,
     TransferFundComponent,
     CompareChartComponent,
+    VolumeChartComponent,
+    CryptosChartComponent,
 
   ],
   imports: [
@@ -55,6 +64,11 @@ export function playerFactory() {
     FormsModule,
     IgxFinancialChartModule,
     IgxLegendModule,
+    IgxCategoryChartModule,
+    IgxDoughnutChartModule,
+    IgxRingSeriesModule,
+    IgxItemLegendModule,
+    IgxPieChartModule,
     LottieModule.forRoot({ player: playerFactory })
   ],
   providers: [],

@@ -7,6 +7,9 @@
     .app-container {
         display: flex;
         gap: rem(35px);
+        @media(max-width: 800px) {
+            gap: rem(20px);
+        }
         main {
             margin: auto;
         }
@@ -27,8 +30,24 @@
                         img {
                             width: 22px;
                         }
+
                     }
                 }
+                .logout {
+                    cursor: pointer;
+                }
+                @media (max-width: 800px) {
+
+                    li {
+                        a {
+                            padding: rem(10px) rem(15px);
+                            width: 100%;
+                        }
+                        span {
+                            display: none;
+                        }
+                    }
+                }   
             }
         }
     }

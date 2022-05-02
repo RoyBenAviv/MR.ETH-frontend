@@ -1,17 +1,16 @@
 <section class="compare-chart-container">
-
-    <h1>Ethereum VS Bitcoin</h1>
-
-    <igx-financial-chart height="400px" width="900px"
-[dataSource]="[ethMP, btcMP]"
-chartType="line"
-thickness=2
-yAxisMode="PercentChange"
-yAxisTitleLeftMargin="25"
-yAxisMajorStrokeThickness="0.08"
-yAxisTitle="Percent Changed"
-negativeBrushes="Transparent"
-zoomSliderType="None">
-
-</igx-financial-chart>
+  <igx-financial-chart
+    height="320px"
+    width="100%"
+    [dataSource]="[ethMP, btcMP]"
+    chartType="line"
+    thickness="2"
+    yAxisMode="PercentChange"
+    yAxisTitleLeftMargin="25"
+    yAxisMajorStrokeThickness="0.08"
+    yAxisTitle="Percent Changed"
+    negativeBrushes="Transparent"
+    zoomSliderType="None"
+  >
+  </igx-financial-chart>
 </section>

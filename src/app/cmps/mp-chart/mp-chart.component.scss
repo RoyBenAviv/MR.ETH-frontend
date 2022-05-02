@@ -1,6 +1,6 @@
-// @import "../../../assets/styles/setup/mixins";
+@import "../../../assets/styles/setup/mixins";
 
-// .mp-chart-container {
-//     margin-left: rem(-25px);
-//     @include container;
-//   }
+.mp-chart-container {
+    &.dashboard {
+    }
+  }

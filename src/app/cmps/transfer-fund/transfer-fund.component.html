@@ -1,8 +1,14 @@
-<section className="transfer-fund">
+<section class="transfer-fund">
     <p>Transfer coins to {{contact.name}}:</p>
-    <label>
-      Amount:
-      <input type="number" [(ngModel)]="amount" name="amount" />
-    </label>
-    <button (click)=onTransferCoins()>Transfer!</button>
+      <label>
+        <div class="input-container">
+          <span>Send:</span>
+          <div>
+            <input type="number" [(ngModel)]="amount" name="amount" />
+            <span class="send" (click)=onTransferCoins()><img src="../../../assets/images/send.png" /></span>  
+          </div>
+          
+        </div>
+        
+      </label>
   </section>

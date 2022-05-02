@@ -1,0 +1,12 @@
+<div class="cryptos-chart">
+    <div *ngIf="cryptoChartInformation" class="container">
+        <igx-pie-chart height="320px"
+            width="100%"
+            [dataSource]="cryptoChartInformation"
+            valueMemberPath="Value"
+            labelMemberPath="Label"
+            labelsPosition="BestFit"
+            radiusFactor="0.7">
+        </igx-pie-chart>
+    </div>
+</div>

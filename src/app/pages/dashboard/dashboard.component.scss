@@ -1,0 +1,71 @@
+@import "../../../assets/styles/setup/mixins";
+@import "../../../assets/styles/setup/functions";
+@import "../../../assets/styles/setup/variables";
+
+.dashboard {
+  display: grid;
+  grid-gap: rem(20px);
+  > * {
+    @include container;
+    padding: rem(25px);
+  }
+
+  .ethereum-info, .blockchain-info {
+      div {
+          @include flex(row, space-between);
+          width: 100%;
+          margin-block-end: rem(10px);
+      }
+  }
+  h1 {
+      @include title;
+      font-size: rem(20px);
+  }
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: minmax(10px, auto);
+  grid-template-areas:
+    "mp mp mp"
+    "info pie bars"
+    "bc pie bars"
+    "vs vs vs"
+    "wiki wiki wiki";
+
+
+    .mp {
+        margin-block-start: rem(50px);
+        grid-area: mp;
+    }
+    .ethereum-info {
+        grid-area: info;
+    }
+
+    .blockchain-info {
+        grid-area: bc;
+    }
+
+    .compare {
+        grid-area: vs;
+    }
+
+    .volume {
+        grid-area: bars;
+    }
+
+    .cryptos {
+        grid-area: pie;
+    }
+
+    .what-is-eth {
+        grid-area: wiki;
+        p {
+            margin: rem(20px) 0 rem(30px) 0;
+            font-size: rem(14px);
+            line-height: 1.5;
+            font-family: inter-medium;
+        }
+        margin-block-end: rem(50px);
+    }
+
+}
+

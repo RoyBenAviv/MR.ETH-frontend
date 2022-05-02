@@ -1,5 +1,4 @@
-<section class="mp-chart-container">
-    <!-- <h1>Ethereum Market Price</h1> -->
+<section [ngClass]="cmp === 'dashboard' ? 'dashboard' : ''" class="mp-chart-container">
     <igx-financial-chart height="320px" width="100%"
     [dataSource]="ethMP"
     chartType="Candle"

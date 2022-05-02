@@ -1,13 +1,26 @@
 <section class="contact-details">
-    <img src="https://robohash.org/set_set5/{{contact._id}}.png" alt="img" />
-    <h1>{{contact.name}}</h1>
-    <h2>
-      <span>Email:</span> {{contact.email}}
-    </h2>
-    <h2>
-      <span>Phone:</span> {{contact.phone}}
-    </h2>
-    <button (click)="onBack()">Back</button>
-    <transfer-fund (transferCoins)="transferCoins($event)" [contact]="contact"></transfer-fund>
-    <move-list [title]="title" [moves]="getContactMoves()"></move-list>
+
+  <h1>{{contact.name}}</h1>
+  <div class="contact-container">
+
+    <div class="contact-info">
+      <img class="profile" src="https://robohash.org/set_set5/{{contact._id}}.png" alt="img" />
+      <p>
+        <span><img class="email" src="../../../assets/images/email.png" /></span> <a href="mailto:{{contact.email}}">{{contact.email}}</a>
+      </p>
+      <p>
+        <span><img class="phone" src="../../../assets/images/phone.png" /></span> <a href="tel:{{contact.phone}}">{{contact.phone}}</a>
+      </p>
+    </div>
+    <div class="trade-container">
+      <div class="transfer-fund">
+        <transfer-fund (transferCoins)="transferCoins($event)" [contact]="contact"></transfer-fund>
+        
+      </div>
+      <div class="move-list">
+        <move-list cmp="details" [title]="title"x [moves]="getContactMoves()"></move-list>
+      </div>
+    </div>
+  </div>
+  <button (click)="onBack()">Back</button>
 </section>

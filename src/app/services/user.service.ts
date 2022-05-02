@@ -33,6 +33,11 @@ export class UserService {
     return of(user)
   }
 
+  public logout() {
+    console.log('hi')
+    localStorage.removeItem(USER_KEY)
+  }
+
   public addMove(contact, amount): any {
     const user =  storageService.load(USER_KEY)
     if(user.coins < amount || !amount) return
@@ -49,7 +54,9 @@ export class UserService {
     this._user$.next(user);
     return of(user)
   }
+
 }
+
 
 
 

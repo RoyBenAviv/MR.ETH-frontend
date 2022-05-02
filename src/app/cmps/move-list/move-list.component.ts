@@ -12,7 +12,6 @@ export class MoveListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('this.cmp',this.cmp);
   }
 
 }
