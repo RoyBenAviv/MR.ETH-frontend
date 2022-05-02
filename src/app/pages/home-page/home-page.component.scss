@@ -1,12 +1,41 @@
 @import "../../../assets/styles/setup/mixins";
 @import "../../../assets/styles/setup/functions";
 @import "../../../assets/styles/setup/variables";
+
 .home-page {
-  @include flex(row, center, _);
-  @media(max-width: 1200px) {
-    flex-direction: column;
-    align-items: center;
+  display: grid;
+  grid-gap: rem(20px);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: minmax(10px, auto);
+  grid-template-areas: "home home home moves"
+                        "home home home moves"
+                        "home home home coins";
+  
+  @media (max-width: 1400px) {
+     grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "home home home home"
+                              "home home home home"
+                              "coins coins moves moves";
   }
+
+  .moves {
+    grid-area: moves;
+  }
+  .other-coins {
+    grid-area: coins;
+  }
+
+  .home-container {
+    grid-area: home;
+    width: 900px;
+    @media (max-width: 1300px) {
+      width: 800px;
+    }
+    @media (max-width: 1110px) {
+      width: 100%;
+    }
+  }
+
   margin-block-start: rem(50px);
   .home-container,
   .moves,
@@ -14,13 +43,19 @@
     @include container;
   }
   .home-container {
-    width: 900px;
     padding: rem(45px);
     ul {
       @include flex(row, space-between);
       margin-block-end: rem(45px);
+      @media (max-width: 1100px) {
+        gap: rem(30px);
+        white-space: nowrap;
+      }
       li {
         @include flex;
+        @media (max-width: 940px) {
+          flex-direction: column;
+        }
         gap: rem(10px);
         .symbol {
           width: 60px;
@@ -29,6 +64,7 @@
           justify-self: flex-start;
           background-color: $small-container;
           border-radius: 14px;
+
           img {
             width: 32px;
           }
@@ -37,19 +73,23 @@
           }
         }
         .stats-information {
-          @include flex(column, flex-start, flex-start);
-          gap: rem(4px);
           p {
             font-size: rem(14px);
           }
           h2 {
             font-size: rem(24px);
             font-family: inter-bold;
+            @media (max-width: 1100px) {
+              font-size: rem(16px);
+            }
           }
         }
       }
     }
     .chart-container {
+      @media (max-width: 940px) {
+        display: none;
+      }
       h2 {
         font-family: inter-semi;
         font-size: rem(20px);
@@ -57,27 +97,10 @@
       }
     }
   }
-  aside {
-    @include flex(column);
-    @media(max-width: 1478px) {
-      flex-direction: row;
-      width: 900px;
-      gap: rem(100px);
-      margin: rem(40px) 0;
-    }
-    gap: rem(30px);
     .moves,
     .other-coins {
-      max-width: 240px;
-      min-width: 260px;
-      margin-inline-start: rem(35px);
       padding: rem(20px) rem(30px) rem(30px) rem(30px);
       height: 100%;
-      @media(max-width: 1200px) {
-        max-width: 400px;
-        min-width: 400px;
-        margin: 0;
-      }
     }
     .other-coins {
       max-height: 250px;
@@ -112,5 +135,4 @@
         }
       }
     }
-  }
 }

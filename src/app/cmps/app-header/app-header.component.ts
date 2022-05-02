@@ -24,7 +24,6 @@ export class AppHeaderComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getUser();
     this.user$ = this.userService.user$;
-    // this.lightmode = darkmodeService.getMode();
     if(darkmodeService.getMode()) this.onSwitchTheme()
   }
 }

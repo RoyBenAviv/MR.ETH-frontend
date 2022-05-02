@@ -24,7 +24,6 @@ export class MpChartComponent implements OnInit {
           high: data.high,
           low: data.low,
           close: data.close,
-          // Adj Close: data.close,
           volume: data.volumefrom
         }
       })

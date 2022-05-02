@@ -9,7 +9,6 @@ export class Contact {
     }
 
     setId?(id:string) {
-        // Implement your own set Id
         this._id = id
     }
 }
