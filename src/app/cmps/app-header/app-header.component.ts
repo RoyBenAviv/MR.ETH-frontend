@@ -11,7 +11,23 @@ export class AppHeaderComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
+  lightmode = false;
   user$!: Observable<User>
+
+  switchTheme() {
+    this.lightmode = !this.lightmode
+    if(this.lightmode) {
+      document.querySelector('body').classList.add('light')
+      document.querySelector('.header-logo').classList.add('light')
+      document.querySelector('.user-profile').classList.add('light')
+      document.querySelector('.navbar').classList.add('light')
+    } else {
+      document.querySelector('body').classList.remove('light')
+      document.querySelector('.header-logo').classList.remove('light')
+      document.querySelector('.user-profile').classList.remove('light')
+      document.querySelector('.navbar').classList.remove('light')
+    }
+  }
 
   ngOnInit(): void {
     this.userService.getUser()

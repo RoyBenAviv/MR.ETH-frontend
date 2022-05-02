@@ -20,6 +20,13 @@
                 gap: rem(18px);
                 font-size: 18px;
                 color: $grey;
+
+                &.light {
+                    color: #333333;
+                    span {
+                        color: #333333;
+                    }
+                }
                 li {
                     a {
                         padding-inline-start: 25px;
@@ -54,6 +61,7 @@
 
     .deposite {
         position: fixed;
+        z-index: 100;
         @include flex(column);
         inset: 0;
         background-color: rgba(0, 0, 0, 0.71);

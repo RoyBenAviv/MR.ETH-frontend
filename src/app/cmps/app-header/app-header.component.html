@@ -1,9 +1,11 @@
 <header class="app-header">
-    <div routerLink="" class="logo">
+    <div routerLink="" class="header-logo">
         <i class="fa-brands fa-ethereum"></i>
         <h2>MR. <span>ETH</span></h2>
     </div>
     <div class="user-profile">
+        <button (click)="switchTheme()">Dark</button>
+        |
     <div class="coins"><p>{{(user$ | async)?.coins}}</p><i class="fa-brands fa-ethereum"></i></div>
     |
     <p>{{(user$ | async )?.name}}</p> 
