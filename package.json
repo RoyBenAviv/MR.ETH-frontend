@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "@angular/service-worker": "~13.3.0",
     "@syncfusion/ej2-angular-base": "^20.1.48",
     "igniteui-angular-charts": "^13.1.1",
     "ngx-lottie": "^8.2.0",

@@ -4,9 +4,16 @@
       <i class="fa-brands fa-ethereum"></i>
       <h2>MR. <span>ETH</span></h2>
     </div>
-    <p>Buy, trade, and hold Ethereum on MR. ETH</p>
+    <p class="intro">Buy, trade, and hold Ethereum on MR. ETH</p>
     <div class="input-container">
       <input [(ngModel)]="username" type="text" name="username" placeholder="Full name" />
+
+      <div class="error" [ngClass]="error ? 'on' : 'off'">
+          <p>
+            Please enter a name!
+          </p>
+      </div>        
+
       <button (click)="signup()"><span class="start">Get Started</span> <span class="start-icon"><i class="fa-solid fa-arrow-right"></i></span></button>
     </div>
 

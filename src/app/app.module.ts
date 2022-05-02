@@ -11,15 +11,15 @@ import { ContactPreviewComponent } from './cmps/contact-preview/contact-preview.
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { MpChartComponent } from './cmps/mp-chart/mp-chart.component';
 import { FormsModule } from '@angular/forms';
-import { 
-	IgxFinancialChartModule,
+import {
+  IgxFinancialChartModule,
   IgxCategoryChartModule,
-	IgxLegendModule,
+  IgxLegendModule,
   IgxDoughnutChartModule,
-	IgxRingSeriesModule,
+  IgxRingSeriesModule,
   IgxItemLegendModule,
   IgxPieChartModule,
- } from "igniteui-angular-charts";
+} from 'igniteui-angular-charts';
 import { ContactDetailsComponent } from './pages/contact-details/contact-details.component';
 import { ContactEditComponent } from './pages/contact-edit/contact-edit.component';
 import { ContactFilterComponent } from './cmps/contact-filter/contact-filter.component';
@@ -31,6 +31,8 @@ import player from 'lottie-web';
 import { CompareChartComponent } from './cmps/compare-chart/compare-chart.component';
 import { VolumeChartComponent } from './cmps/volume-chart/volume-chart.component';
 import { CryptosChartComponent } from './cmps/cryptos-chart/cryptos-chart.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 export function playerFactory() {
   return player;
@@ -55,7 +57,6 @@ export function playerFactory() {
     CompareChartComponent,
     VolumeChartComponent,
     CryptosChartComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -69,9 +70,15 @@ export function playerFactory() {
     IgxRingSeriesModule,
     IgxItemLegendModule,
     IgxPieChartModule,
-    LottieModule.forRoot({ player: playerFactory })
+    LottieModule.forRoot({ player: playerFactory }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

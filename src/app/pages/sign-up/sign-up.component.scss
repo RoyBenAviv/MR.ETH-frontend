@@ -49,7 +49,7 @@
                 }
             }
         }
-        p {
+        .intro {
             text-align: center;
             font-family: inter-bold;
             font-size: rem(35px);
@@ -66,17 +66,35 @@
                 margin-block-start: rem(10px);
             }
             @media (max-width: 550px) {
-                font-size: rem(25px)
+                font-size: rem(25px);
             }
         }
 
         .input-container {
             @include flex;
+            position: relative;
+            .error {
+                z-index: 1;
+                position: absolute;
+                border-radius: 10px;
+                padding: rem(20px);
+                background-color: rgb(182, 28, 28);
+                font-size: rem(16px);
+                bottom: 60px;
+                right: -100px;
+                transform: rotate(25deg);
+                opacity: 0;
+                transition: opacity 0.5s;
+                &.on {
+                  opacity: 1;
+                }
+            }
+
             input {
                 border: 1px solid $white;
                 background-color: $background;
                 padding: rem(12px) rem(24px);
-                height: 45px;
+                height: 49px;
                 border-radius: 3px;
                 color: $white;
                 font-size: rem(14px);
@@ -93,6 +111,7 @@
                 }
             }
             button {
+                border: 2px solid transparent;
                 .start-icon {
                     display: none;
                 }
@@ -106,19 +125,53 @@
                         display: none;
                     }
                 }
+                position: relative;
+                transition: all 0.5s;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    transition: all 0.5s;
+                    border: 1px solid rgba(255,255,255,0.2);
+                    background-color: rgba(255,255,255,0.1);
+                }
 
+                &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        transition: all 0.5s;
+                        border: 1px solid rgba(255,255,255,0.2);
+                        background-color: rgba(255,255,255,0.1);
+                }
+
+                &:hover {
+                    background-color: transparent;
+                    color: white;
+                    border-color: $pink;
+
+                    &::before {
+                        transform: rotate(-45deg);
+                        background-color: rgba(255,255,255,0);
+                    }
+                    &::after {
+                        transform: rotate(45deg);
+                        background-color: rgba(255,255,255,0);
+                    }
+                }
                 border-radius: 3px;
                 background-color: $pink;
                 font-family: inter-medium;
                 font-size: rem(18px);
                 width: 160px;
                 margin-left: 16px;
-                border: none;
                 padding: rem(12px) rem(24px);
-                transition: background-color 0.4s;
-                &:hover {
-                    background-color: lighten($pink, 10%);
-                }
             }
         }
     }

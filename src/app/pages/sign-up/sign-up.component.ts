@@ -14,8 +14,17 @@ export class SignUpComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   username: string = ''
-
+  error: boolean = false
+  
   async signup(): Promise<any> {
+    if(!this.username) {
+      this.error = true
+    setTimeout(() => {
+      this.error = false
+    }, 5000)
+    return
+    }
+
     await lastValueFrom(this.userService.signup(this.username))
     this.router.navigateByUrl('')
   }
