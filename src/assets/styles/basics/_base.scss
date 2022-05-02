@@ -25,7 +25,15 @@ body {
   text-rendering: optimizeSpeed;
   transition: all 0.5s ease-in-out;
   &.light {
-    background: whitesmoke;
+    background: radial-gradient(
+      circle,
+      #ff9ffc 0%,
+      whitesmoke,
+      whitesmoke
+    );
+    background-position-x: 3100px;
+    background-size: 1100px;
+    background-position-y: -75px;
   }
 }
 

@@ -1,10 +1,11 @@
 <section class="main-app main-layout">
-  <app-header></app-header>
+  <app-header (switchTheme)="switchTheme($event)"></app-header>
   <section class="app-container">
     <nav>
       <ul class="navbar">
         <li>
           <a
+            class="nav-btn"
             routerLink=""
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
@@ -12,28 +13,43 @@
           >
         </li>
         <li>
-          <a routerLink="contacts" routerLinkActive="active"
-            ><img src="../../../assets/images/trade.png" /><span>Trade</span></a
+          <a class="nav-btn" routerLink="contacts" routerLinkActive="active">
+            <img *ngIf="lightmode" src="../../../assets/images/trade-dark.png" />
+            <img
+            *ngIf="!lightmode"
+              src="../../../assets/images/trade.png"
+            /><span>Trade</span></a
           >
         </li>
         <li>
-          <a routerLink="dashboard" routerLinkActive="active"
-            ><img src="../../../assets/images/dashboard.png" />
+          <a class="nav-btn" routerLink="dashboard" routerLinkActive="active">
+            <img
+            *ngIf="lightmode"
+              src="../../../assets/images/dashboard-dark.png"
+            />
+            <img *ngIf="!lightmode" src="../../../assets/images/dashboard.png" />
+
             <span>Dashboard</span></a
           >
         </li>
         <li class="deposite-btn" (click)="deposite = true">
-          <a
-            ><img src="../../../assets/images/donate.png" /><span
-              >Deposite</span
-            ></a
+          <a class="nav-btn"
+            ><img
+            *ngIf="lightmode"
+              src="../../../assets/images/donate-dark.png"
+            />
+            <img *ngIf="!lightmode" src="../../../assets/images/donate.png" />
+            <span>Deposite</span></a
           >
         </li>
         <li class="logout" (click)="logout()">
-          <a
-            ><img src="../../../assets/images/logout.png" /><span
-              >Log Out</span
-            ></a
+          <a class="nav-btn"
+            ><img
+            *ngIf="lightmode"
+              src="../../../assets/images/logout-dark.png"
+            />
+            <img *ngIf="!lightmode" src="../../../assets/images/logout.png" />
+            <span>Log Out</span></a
           >
         </li>
       </ul>
@@ -43,28 +59,42 @@
     </main>
   </section>
   <section class="deposite" *ngIf="deposite === true">
-      <div class="deposite-container">
-        <span (click)="deposite = false"><i class="fa-solid fa-x"></i></span>
-          <div *ngIf="loading === false && done === false">
-
-              <h1>Deposite Ethereum</h1>
-              <label>Amount:
-                  <input type="number" [(ngModel)]="amount" name="amount" min="0" max="99" placeholder="ETH"/>
-                  <i class="fa-brands fa-ethereum"></i>
-                </label>
-                <button (click)="onDeposite()">Deposite</button>
-            </div>
-
-        <div class="loading" *ngIf="loading === true" class="lottie-container">
-            <ng-lottie width="100%" height="200px" [options]="loadingAnimation"></ng-lottie>
-            <h2>Loading...</h2>
-          </div>
-
-          <div class="done" *ngIf="done === true" class="lottie-container">
-            <ng-lottie width="100%" height="200px" [options]="doneAnimation"></ng-lottie>
-            <h2>Done!</h2>
-          </div>
+    <div class="deposite-container">
+      <span (click)="deposite = false"><i class="fa-solid fa-x"></i></span>
+      <div *ngIf="loading === false && done === false">
+        <h1>Deposite Ethereum</h1>
+        <label
+          >Amount:
+          <input
+            type="number"
+            [(ngModel)]="amount"
+            name="amount"
+            min="0"
+            max="99"
+            placeholder="ETH"
+          />
+          <i class="fa-brands fa-ethereum"></i>
+        </label>
+        <button (click)="onDeposite()">Deposite</button>
       </div>
 
+      <div class="loading" *ngIf="loading === true" class="lottie-container">
+        <ng-lottie
+          width="100%"
+          height="200px"
+          [options]="loadingAnimation"
+        ></ng-lottie>
+        <h2>Loading...</h2>
+      </div>
+
+      <div class="done" *ngIf="done === true" class="lottie-container">
+        <ng-lottie
+          width="100%"
+          height="200px"
+          [options]="doneAnimation"
+        ></ng-lottie>
+        <h2>Done!</h2>
+      </div>
+    </div>
   </section>
 </section>

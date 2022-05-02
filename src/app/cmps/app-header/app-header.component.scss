@@ -25,11 +25,21 @@
           color: $gold;
         }
       }
-      img {
-          width: 37px;
-          height: 37px;
-          border: 2px solid $grey;
-          border-radius: 50%;
+
+
+      .darkmode-btn {
+        @include flex;
+        cursor: pointer;
+        img {
+          width: 20px;
+        }
+      }
+      
+      .profile-img {
+        border: 2px solid $grey;
+        border-radius: 50%;
+        width: 37px;
+        height: 37px;
       }
       p {
           font-size: rem(18px);
@@ -44,7 +54,9 @@
           p {
             color: #333;
           }
-
+          i {
+            color: #333;
+          }
         }
       }
   }

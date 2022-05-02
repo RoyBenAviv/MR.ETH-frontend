@@ -4,11 +4,14 @@
         <h2>MR. <span>ETH</span></h2>
     </div>
     <div class="user-profile">
-        <button (click)="switchTheme()">Dark</button>
+        <div class="darkmode-btn" (click)="onSwitchTheme()">
+            <img *ngIf="lightmode" src="../../../assets/images/lightmode.png" />
+            <img *ngIf="!lightmode" src="../../../assets/images/darkmode.png" />
+        </div>
         |
     <div class="coins"><p>{{(user$ | async)?.coins}}</p><i class="fa-brands fa-ethereum"></i></div>
     |
     <p>{{(user$ | async )?.name}}</p> 
-        <img src="https://robohash.org/set_set5/{{(user$ | async )?.name}}.png" alt="img" />
+        <img class="profile-img" src="https://robohash.org/set_set5/{{(user$ | async )?.name}}.png" alt="img" />
     </div>
 </header>

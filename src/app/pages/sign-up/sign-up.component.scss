@@ -13,7 +13,7 @@
         gap: rem(15px);
     }
     gap: rem(90px);
-    margin-block-end: rem(90px);
+    padding-block-end: rem(90px);
     position: absolute;
     inset: 0;
     background-color: $background;
@@ -60,11 +60,11 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-block-start: rem(50px);
-            width: 65%;
+            width: 500px;
             font-size: rem(45px);
             line-height: 1.4;
             @media (max-width: 735px) {
-                width: 90%;
+                width: 65%;
                 margin-block-start: rem(10px);
             }
             @media (max-width: 550px) {

@@ -3,6 +3,10 @@
 @import "../../../assets/styles/setup/variables";
 .home-page {
   @include flex(row, center, _);
+  @media(max-width: 1200px) {
+    flex-direction: column;
+    align-items: center;
+  }
   margin-block-start: rem(50px);
   .home-container,
   .moves,
@@ -55,6 +59,12 @@
   }
   aside {
     @include flex(column);
+    @media(max-width: 1478px) {
+      flex-direction: row;
+      width: 900px;
+      gap: rem(100px);
+      margin: rem(40px) 0;
+    }
     gap: rem(30px);
     .moves,
     .other-coins {
@@ -63,6 +73,11 @@
       margin-inline-start: rem(35px);
       padding: rem(20px) rem(30px) rem(30px) rem(30px);
       height: 100%;
+      @media(max-width: 1200px) {
+        max-width: 400px;
+        min-width: 400px;
+        margin: 0;
+      }
     }
     .other-coins {
       max-height: 250px;

@@ -3,114 +3,116 @@
 @import "../../../assets/styles/setup/variables";
 
 .main-app {
-    min-height: 100vh;
-    .app-container {
-        display: flex;
-        gap: rem(35px);
-        @media(max-width: 800px) {
+  min-height: 100vh;
+  .app-container {
+    display: flex;
+    gap: rem(35px);
+    @media (max-width: 800px) {
+      gap: rem(20px);
+    }
+    main {
+      margin: auto;
+    }
+    nav {
+      margin-block-start: rem(50px);
+      ul {
+        @include flex(column, center, flex-start);
+        gap: rem(18px);
+        font-size: 18px;
+        color: $grey;
+
+        &.light {
+          color: #333333;
+          span {
+            color: #333333;
+          }
+        }
+        li {
+          .nav-btn {
+            padding-inline-start: 25px;
+            width: 200px;
+            height: 50px;
+            @include flex(row, flex-start);
             gap: rem(20px);
-        }
-        main {
-            margin: auto;
-        }
-        nav {
-            margin-block-start: rem(50px);
-            ul {
-                @include flex(column, center, flex-start);
-                gap: rem(18px);
-                font-size: 18px;
-                color: $grey;
-
-                &.light {
-                    color: #333333;
-                    span {
-                        color: #333333;
-                    }
-                }
-                li {
-                    a {
-                        padding-inline-start: 25px;
-                        width: 200px;
-                        height: 50px;
-                        @include flex(row, flex-start);
-                        gap: rem(20px);
-                        img {
-                            width: 22px;
-                        }
-
-                    }
-                }
-                .logout, .deposite-btn {
-                    cursor: pointer;
-                }
-                @media (max-width: 800px) {
-
-                    li {
-                        a {
-                            padding: rem(10px) rem(15px);
-                            width: 100%;
-                        }
-                        span {
-                            display: none;
-                        }
-                    }
-                }   
+            img {
+              width: 22px;
             }
+            .dark-img {
+              display: none;
+            }
+          }
         }
-    }
-
-    .deposite {
-        position: fixed;
-        z-index: 100;
-        @include flex(column);
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.71);
-        h1 {
-        @include title;
+        .logout,
+        .deposite-btn {
+          cursor: pointer;
         }
-        .deposite-container {
-            position: relative;
-            @include container;
-            background: rgba(36 36 36 / 0.9);
-            box-shadow: 0px 0px 20px 5px #7a0078;
-            min-height: 500px;
-            min-width: 400px;
-            padding: rem(35px);
-            @include flex(column, flex-start);
-            @include input;
+        @media (max-width: 800px) {
+          li {
+            a {
+              padding: rem(10px) rem(15px) !important;
+              width: 100% !important;
+            }
             span {
-                cursor: pointer;
-                position: absolute;
-                top: 10px;
-                right: 12px;
-                font-size: rem(20px);
+              display: none;
             }
-
-            label {
-                margin-block-start: rem(100px);
-                input {
-                    width: 45px;
-                }
-                i {
-                    color: $gold;
-                    font-size: rem(20px);
-                }
-            }
-            button {
-                display: flex;
-                margin: auto;
-                @include button;
-                border-color: greenyellow;
-                margin-block-start: rem(70px);
-            }
-            input::-webkit-outer-spin-button,
-            input::-webkit-inner-spin-button {
-              -webkit-appearance: none;
-              margin: 0;
-            }
-            .lottie-container {
-                @include flex(column);
-            }
+          }
         }
+      }
     }
+  }
+
+  .deposite {
+    position: fixed;
+    z-index: 100;
+    @include flex(column);
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.71);
+    h1 {
+      @include title;
+    }
+    .deposite-container {
+      position: relative;
+      @include container;
+      background: rgba(36 36 36 / 0.9);
+      box-shadow: 0px 0px 20px 5px #7a0078;
+      min-height: 500px;
+      min-width: 400px;
+      padding: rem(35px);
+      @include flex(column, flex-start);
+      @include input;
+      span {
+        cursor: pointer;
+        position: absolute;
+        top: 10px;
+        right: 12px;
+        font-size: rem(20px);
+      }
+
+      label {
+        margin-block-start: rem(100px);
+        input {
+          width: 45px;
+        }
+        i {
+          color: $gold;
+          font-size: rem(20px);
+        }
+      }
+      button {
+        display: flex;
+        margin: auto;
+        @include button;
+        border-color: greenyellow;
+        margin-block-start: rem(70px);
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      .lottie-container {
+        @include flex(column);
+      }
+    }
+  }
 }

@@ -1,37 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user.model';
 import { UserService } from 'src/app/services/user.service';
+import { darkmodeService } from 'src/app/services/darkmode.service.js';
+
 @Component({
   selector: 'app-header',
   templateUrl: './app-header.component.html',
-  styleUrls: ['./app-header.component.scss']
+  styleUrls: ['./app-header.component.scss'],
 })
 export class AppHeaderComponent implements OnInit {
+  constructor(private userService: UserService) {}
 
-  constructor(private userService: UserService) { }
+  lightmode: boolean = false;
+  user$!: Observable<User>;
+  @Output() switchTheme = new EventEmitter();
 
-  lightmode = false;
-  user$!: Observable<User>
-
-  switchTheme() {
-    this.lightmode = !this.lightmode
-    if(this.lightmode) {
-      document.querySelector('body').classList.add('light')
-      document.querySelector('.header-logo').classList.add('light')
-      document.querySelector('.user-profile').classList.add('light')
-      document.querySelector('.navbar').classList.add('light')
-    } else {
-      document.querySelector('body').classList.remove('light')
-      document.querySelector('.header-logo').classList.remove('light')
-      document.querySelector('.user-profile').classList.remove('light')
-      document.querySelector('.navbar').classList.remove('light')
-    }
+  onSwitchTheme(): void {
+    this.lightmode = !this.lightmode;
+    this.switchTheme.emit(this.lightmode);
   }
 
   ngOnInit(): void {
-    this.userService.getUser()
-      this.user$ = this.userService.user$
+    this.userService.getUser();
+    this.user$ = this.userService.user$;
+    // this.lightmode = darkmodeService.getMode();
+    if(darkmodeService.getMode()) this.onSwitchTheme()
   }
-
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { darkmodeService } from '../../services/darkmode.service.js'
 
 @Component({
   selector: 'app-root',
@@ -23,14 +24,19 @@ export class AppComponent implements OnInit {
   deposite: boolean = false;
   loading: boolean = false;
   done: boolean = false;
-
+  lightmode: boolean;
   logout(): void {
     this.userService.logout();
     this.router.navigateByUrl('/signup');
   }
-
+  
   setRoute(page: string): void {
     this.currPage = page;
+  }
+
+    switchTheme(lightmode: boolean) {
+    this.lightmode = lightmode
+      darkmodeService.changeTheme(this.lightmode)
   }
 
   onDeposite() {
