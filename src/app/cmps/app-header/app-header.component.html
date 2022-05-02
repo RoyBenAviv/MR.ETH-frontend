@@ -1,11 +1,12 @@
 <header class="app-header">
-    <div class="logo">
+    <div routerLink="" class="logo">
         <i class="fa-brands fa-ethereum"></i>
         <h2>MR. <span>ETH</span></h2>
     </div>
-    <!-- <h2 class="user-name">Welcome back, {{(user$ | async )?.name}}</h2> -->
     <div class="user-profile">
-    <p>{{(user$ | async )?.name}}</p>
+    <div class="coins"><p>{{(user$ | async)?.coins}}</p><i class="fa-brands fa-ethereum"></i></div>
+    |
+    <p>{{(user$ | async )?.name}}</p> 
         <img src="https://robohash.org/set_set5/{{(user$ | async )?.name}}.png" alt="img" />
     </div>
 </header>

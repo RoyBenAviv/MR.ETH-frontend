@@ -33,7 +33,7 @@
 
                     }
                 }
-                .logout {
+                .logout, .deposite-btn {
                     cursor: pointer;
                 }
                 @media (max-width: 800px) {
@@ -48,6 +48,60 @@
                         }
                     }
                 }   
+            }
+        }
+    }
+
+    .deposite {
+        position: fixed;
+        @include flex(column);
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.71);
+        h1 {
+        @include title;
+        }
+        .deposite-container {
+            position: relative;
+            @include container;
+            background: rgba(36 36 36 / 0.9);
+            box-shadow: 0px 0px 20px 5px #7a0078;
+            min-height: 500px;
+            min-width: 400px;
+            padding: rem(35px);
+            @include flex(column, flex-start);
+            @include input;
+            span {
+                cursor: pointer;
+                position: absolute;
+                top: 10px;
+                right: 12px;
+                font-size: rem(20px);
+            }
+
+            label {
+                margin-block-start: rem(100px);
+                input {
+                    width: 45px;
+                }
+                i {
+                    color: $gold;
+                    font-size: rem(20px);
+                }
+            }
+            button {
+                display: flex;
+                margin: auto;
+                @include button;
+                border-color: greenyellow;
+                margin-block-start: rem(70px);
+            }
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+            .lottie-container {
+                @include flex(column);
             }
         }
     }

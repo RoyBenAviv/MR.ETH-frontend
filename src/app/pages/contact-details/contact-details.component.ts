@@ -27,14 +27,14 @@ export class ContactDetailsComponent implements OnInit {
       this.user = user;
     });
   }
-  onBack() {
+  onBack(): void {
     this.router.navigateByUrl('/contacts');
   }
-  transferCoins(amount: number) {
+  transferCoins(amount: number): void {
     this.userService.addMove(this.contact, amount)
   }
 
-  getContactMoves() {
+  getContactMoves(): Array<Contact> {
     const contactMoves = this.user.moves.filter(
       (move) => move.toId === this.contact._id
     );

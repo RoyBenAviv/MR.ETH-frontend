@@ -15,8 +15,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
   subscription: Subscription
   coins: Array<Coin>;
   user: User;
-  width: string = '746px';
-  height: string = '370px';
 
   ngOnInit(): void {
     this.getRates();
@@ -25,12 +23,11 @@ export class HomePageComponent implements OnInit, OnDestroy {
     });
   }
 
-  
   ngOnDestroy(): void {
     this.subscription.unsubscribe()
 }
 
-  getMoves(): any[] {
+  getMoves(): User[] {
     return this.user.moves.slice(0, 3);
   }
 

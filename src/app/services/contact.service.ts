@@ -17,15 +17,6 @@ export class ContactService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
   };
 
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(error);
-      console.log(`${operation} failed: ${error.message}`);
-      return of(result as T);
-    };
-  }
-
-
   private _contacts$ = new BehaviorSubject<Contact[]>([]);
   public contacts$ = this._contacts$.asObservable();
   private _filterBy$ = new BehaviorSubject<ContactFilter>({ term: '' });
@@ -33,7 +24,7 @@ export class ContactService {
 
   constructor(private http: HttpClient) {}
 
-  public async loadContacts() {
+  public async loadContacts(): Promise<any> {
     const filterBy: ContactFilter = this._filterBy$.getValue();
     const options = filterBy.term
       ? { params: new HttpParams().set('term', filterBy.term) }
@@ -46,12 +37,12 @@ export class ContactService {
     return this.http.get<Contact>(BASE_URL + `contact/${id}`);
   }
 
-  public async deleteContact(id: string) {
+  public async deleteContact(id: string): Promise<any> {
     await lastValueFrom(this.http.delete(BASE_URL + `contact/${id}`))
     this.loadContacts()
   }
 
-  public saveContact(contact: Contact): any {
+  public saveContact(contact: Contact): Promise<any> {
     return contact._id
       ? this._updateContact(contact)
       : this._addContact(contact);

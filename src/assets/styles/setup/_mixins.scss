@@ -23,7 +23,7 @@
 @mixin logo {
   i {
     font-size: rem(50px);
-    color: #f0c332;
+    color: $gold;
   }
   @include flex;
   gap: rem(14px);

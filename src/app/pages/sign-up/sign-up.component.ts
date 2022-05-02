@@ -15,12 +15,10 @@ export class SignUpComponent implements OnInit {
 
   username: string = ''
 
-  async signup() {
+  async signup(): Promise<any> {
     await lastValueFrom(this.userService.signup(this.username))
     this.router.navigateByUrl('')
   }
-
-
   ngOnInit(): void {
   }
 

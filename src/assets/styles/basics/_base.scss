@@ -8,7 +8,7 @@ html {
   font-family: inter-medium;
   background: radial-gradient(
     circle,
-    #6d0369 0%,
+    #5e045b 0%,
     rgba(29, 29, 29, 1) 56%,
     rgba(29, 29, 29, 1) 100%
   );
@@ -79,28 +79,6 @@ a {
     padding: 0 rem(20px);
   }
   @media (max-width: 450px) {
-    padding: 0;
+    padding: 0 rem(12px);
   }
 }
-
-/// CHART CSS ///
-
-// .home-page {
-
-// }
-
-
-
-
-
-
-// svg {
-//   transform: perspective(1000px) rotateX(4deg) rotateY(320deg) rotateZ(4deg) !important;
-// }
-// g:nth-child(1) {
-//   g:nth-child(1)  {
-//     path:nth-child(1) {
-//     fill: transparent;
-//   }
-// }
-// }

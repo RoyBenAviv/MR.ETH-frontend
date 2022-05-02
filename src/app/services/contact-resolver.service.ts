@@ -11,7 +11,7 @@ export class ContactResolverService implements Resolve<Promise<Contact>> {
 
     constructor(private contactService: ContactService) { }
 
-    async resolve(route: ActivatedRouteSnapshot) {
+    async resolve(route: ActivatedRouteSnapshot): Promise<Contact> {
         const { id } = route.params
         const contact = await lastValueFrom(this.contactService.getContactById(id))
         return contact

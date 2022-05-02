@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import { Contact } from '../models/contact.model';
 import { User } from '../models/user.model';
 import { storageService } from './storageService'
 
@@ -17,7 +18,6 @@ export class UserService {
   public user$ = this._user$.asObservable()
 
   public getUser() {
-    
     this._user$.next(this._userDb);
     return of(this._userDb)
   }
@@ -34,11 +34,10 @@ export class UserService {
   }
 
   public logout() {
-    console.log('hi')
     localStorage.removeItem(USER_KEY)
   }
 
-  public addMove(contact, amount): any {
+  public addMove(contact: Contact, amount: number): Observable<any> | void {
     const user =  storageService.load(USER_KEY)
     if(user.coins < amount || !amount) return
     user.coins -= amount
@@ -55,16 +54,11 @@ export class UserService {
     return of(user)
   }
 
+  public deposite(amount: number) {
+    const user =  storageService.load(USER_KEY)
+    user.coins += amount
+    storageService.store(USER_KEY, user)
+    this._user$.next(user);
+  }
 }
-
-
-
-
-// private _updateContact(contact: Contact) {
-//   //mock the server work
-//   this._contactsDb = this._contactsDb.map(c => contact._id === c._id ? contact : c)
-//   // change the observable data in the service - let all the subscribers know
-//   this._contacts$.next(this._sort(this._contactsDb))
-//   return of(contact)
-// }
 

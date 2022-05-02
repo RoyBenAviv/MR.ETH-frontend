@@ -9,6 +9,7 @@ export class MoveListComponent implements OnInit {
 @Input() moves: any[]
 @Input() title: string
 @Input() cmp: string
+
   constructor() { }
 
   ngOnInit(): void {

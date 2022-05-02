@@ -3,25 +3,126 @@
 @import "../../../assets/styles/setup/variables";
 
 .sign-up {
-    overflow: hidden;
-    @include flex;
-    
+    >* {
+        flex-basis: 50%;
+    }
+    @include flex(row);
+    @media(max-width: 1200px) {
+        flex-direction: column-reverse;
+        margin: rem(20px) 0;
+        gap: rem(15px);
+    }
+    gap: rem(90px);
+    margin-block-end: rem(90px);
     position: absolute;
     inset: 0;
     background-color: $background;
-    .lottie-container {
-        flex-basis: 10%;
+    .img-container {
+        @include flex;
+        @media (max-width: 1200px) {
+            flex-basis: 0;
+        }
+        svg {
+            width: 85%;
+            @media (max-width: 1200px) {
+                width: 400px;
+            }
+            @media (max-width: 735px) {
+                width: 300px;
+                margin-block-end: rem(50px);
+            }
+            // width: 520px;
+            // height: 520px;
+        }
     }
     .left-container {
         @include flex(column);
-        gap: rem(20px);
-        flex-basis: 90%;
+        gap: rem(30px);
         .logo {
             @include logo;
             i {
-                font-size: rem(90px);
+                font-size: rem(120px);
             }
-            font-size: rem(70px);
+            font-size: rem(80px);
+            @media (max-width: 735px) {
+                font-size: rem(55px);
+                i {
+                    font-size: rem(95px);
+                }
+            }
+        }
+        p {
+            text-align: center;
+            font-family: inter-bold;
+            font-size: rem(35px);
+            margin-block-end: rem(20px);
+            background: -webkit-linear-gradient(20deg, $pink 10%, lighten($pink, 60%) );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-block-start: rem(50px);
+            width: 65%;
+            font-size: rem(45px);
+            line-height: 1.4;
+            @media (max-width: 735px) {
+                width: 90%;
+                margin-block-start: rem(10px);
+            }
+            @media (max-width: 550px) {
+                font-size: rem(25px)
+            }
+        }
+
+        .input-container {
+            @include flex;
+            input {
+                border: 1px solid $white;
+                background-color: $background;
+                padding: rem(12px) rem(24px);
+                height: 45px;
+                border-radius: 3px;
+                color: $white;
+                font-size: rem(14px);
+                font-family: inter-medium;
+                transition: border-color 0.3s;
+                &:focus {
+                    outline: none;
+                    border-color: $pink;
+                }
+                &::placeholder {
+                    color: $white;
+                    font-size: rem(14px);
+                    font-family: inter-medium;
+                }
+            }
+            button {
+                .start-icon {
+                    display: none;
+                }
+                @media (max-width: 550px) {
+                    width: 60px;
+                    padding: rem(12px);
+                    .start-icon {
+                        display: block;
+                    }
+                    .start {
+                        display: none;
+                    }
+                }
+
+                border-radius: 3px;
+                background-color: $pink;
+                font-family: inter-medium;
+                font-size: rem(18px);
+                width: 160px;
+                // color: $white;
+                margin-left: 16px;
+                border: none;
+                padding: rem(12px) rem(24px);
+                transition: background-color 0.4s;
+                &:hover {
+                    background-color: lighten($pink, 10%);
+                }
+            }
         }
     }
 }

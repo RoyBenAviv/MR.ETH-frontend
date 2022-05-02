@@ -6,6 +6,7 @@
   padding-block-start: rem(50px);
   .logo {
     @include logo;
+    cursor: pointer;
   }
   // .user-name {
   //   font-family: roboto-bold;
@@ -13,6 +14,13 @@
   .user-profile {
       @include flex;
       gap: rem(14px);
+      .coins {
+        @include flex;
+        gap: rem(7px);
+        i {
+          color: $gold;
+        }
+      }
       img {
           width: 37px;
           height: 37px;

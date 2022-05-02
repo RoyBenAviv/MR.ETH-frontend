@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
-import { delay, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -8,8 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class EthereumService {
+    
     constructor(private http: HttpClient) { }
-
 
     public getRates(): Observable<any> {
         return this.http.get('https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,SOL,SHIB,DOGE,BNB,ADA,XRP&tsyms=USD')
@@ -50,6 +50,4 @@ export class EthereumService {
             map(res => res.Data.Data)
         )
     }
-
-
 }

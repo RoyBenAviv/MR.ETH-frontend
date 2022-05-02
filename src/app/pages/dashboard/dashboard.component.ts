@@ -8,7 +8,7 @@ import { EthereumService } from 'src/app/services/ethereum.service';
 })
 export class DashboardComponent implements OnInit {
 
-  cryptoInfo: any 
+  cryptoInfo: any
   ethBCData: any
   constructor(private ethereumService: EthereumService) { }
 

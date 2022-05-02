@@ -3,6 +3,7 @@
 @import "../../../assets/styles/setup/variables";
 
 .dashboard {
+    padding: 0 rem(70px);
   display: grid;
   grid-gap: rem(20px);
   > * {
@@ -14,7 +15,13 @@
       div {
           @include flex(row, space-between);
           width: 100%;
-          margin-block-end: rem(10px);
+          margin-block-end: rem(8px);
+          p {
+              font-size: rem(14px);
+          }
+          span {
+              font-size: rem(14px);
+          }
       }
   }
   h1 {
@@ -31,6 +38,17 @@
     "vs vs vs"
     "wiki wiki wiki";
 
+    @media (max-width: 1420px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+        "mp mp mp mp"
+        "info info pie pie"
+        "bc bc pie pie"
+        "vs vs vs vs"
+        "bars bars bars bars"
+        "wiki wiki wiki wiki";
+        padding: 0 rem(10px);
+    }
 
     .mp {
         margin-block-start: rem(50px);
@@ -54,6 +72,9 @@
 
     .cryptos {
         grid-area: pie;
+        h1 {
+            margin-block-end: rem(45px);
+        }
     }
 
     .what-is-eth {

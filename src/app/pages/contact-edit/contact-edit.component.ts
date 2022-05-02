@@ -14,8 +14,6 @@ export class ContactEditComponent implements OnInit, OnDestroy {
     private router: Router,
     private route: ActivatedRoute
   ) {}
-  // routeSubscription: Subscription
-  // contactSubscription: Subscription
   contact: Contact;
   contacts: Contact[] = [];
 
@@ -28,11 +26,10 @@ export class ContactEditComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // this.routeSubscription.unsubscribe()
-    // this.contactSubscription.unsubscribe()
+
   }
 
-  onSaveContact() {
+  onSaveContact(): void {
     this.contactService.saveContact({ ...this.contact })
     this.router.navigateByUrl('/contacts');
   }

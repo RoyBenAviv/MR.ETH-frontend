@@ -9,17 +9,16 @@ import { EthereumService } from 'src/app/services/ethereum.service';
 export class CompareChartComponent implements OnInit {
   constructor(private ethereumService: EthereumService) {}
 
-  data: Array<any> = [];
-  ethMP: Array<object> = []
-  btcMP: Array<object> = []
+  data: Array<object> = [];
+  ethMP: Array<object> = [];
+  btcMP: Array<object> = [];
 
   ngOnInit(): void {
-    this.getETHMarketPrice()
-    this.getBTCMarketPrice()
-
+    this.getETHMarketPrice();
+    this.getBTCMarketPrice();
   }
 
-  getETHMarketPrice() {
+  getETHMarketPrice(): void {
     this.ethereumService.getMarketPrice().subscribe((ethMP) => {
       this.ethMP = ethMP.map((data) => {
         return {
@@ -28,14 +27,13 @@ export class CompareChartComponent implements OnInit {
           high: data.high,
           low: data.low,
           close: data.close,
-          // Adj Close: data.close,
           volume: data.volumefrom,
         };
       });
     });
   }
 
-  getBTCMarketPrice() {
+  getBTCMarketPrice(): void {
     this.ethereumService.getBTCMarketPrice().subscribe((btcMP) => {
       this.btcMP = btcMP.map((data) => {
         return {
@@ -44,7 +42,6 @@ export class CompareChartComponent implements OnInit {
           high: data.high,
           low: data.low,
           close: data.close,
-          // Adj Close: data.close,
           volume: data.volumefrom,
         };
       });
