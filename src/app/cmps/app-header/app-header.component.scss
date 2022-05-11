@@ -6,6 +6,14 @@
   padding-block-start: rem(50px);
   .header-logo {
     @include logo;
+    @media (max-width: 500px) {
+      h2 {
+        font-size: rem(25px);
+      }
+      i {
+        font-size: rem(35px);
+      }
+    } 
     cursor: pointer;
     &.light {
       color: #333;

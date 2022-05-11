@@ -3,17 +3,17 @@
 @import "../../../assets/styles/setup/variables";
 
 .sign-up {
+    overflow: hidden;
+    height: 100vh;
     >* {
         flex-basis: 50%;
     }
     @include flex(row);
     @media(max-width: 1200px) {
         flex-direction: column-reverse;
-        margin: rem(20px) 0;
         gap: rem(15px);
     }
     gap: rem(90px);
-    padding-block-end: rem(90px);
     position: absolute;
     inset: 0;
     background-color: $background;
@@ -21,15 +21,19 @@
         @include flex;
         @media (max-width: 1200px) {
             flex-basis: 0;
-        }
-        svg {
-            width: 85%;
             @media (max-width: 1200px) {
                 width: 400px;
             }
             @media (max-width: 735px) {
                 width: 300px;
-                margin-block-end: rem(50px);
+            }
+            svg {
+                @media (max-width: 1200px) {
+                    width: 400px;
+                }
+                @media (max-width: 735px) {
+                    width: 300px;
+                }
             }
         }
     }
@@ -46,6 +50,12 @@
                 font-size: rem(55px);
                 i {
                     font-size: rem(95px);
+                }
+            }
+            @media (max-width: 635px) {
+                font-size: rem(35px);
+                i {
+                    font-size: rem(65px);
                 }
             }
         }
@@ -65,7 +75,7 @@
                 width: 65%;
                 margin-block-start: rem(10px);
             }
-            @media (max-width: 550px) {
+            @media (max-width: 650px) {
                 font-size: rem(25px);
             }
         }

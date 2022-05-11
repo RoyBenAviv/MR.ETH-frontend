@@ -26,5 +26,23 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "api",
+      "urls": [
+        "https://min-api.cryptocompare.com/data/pricemulti?fsyms=BTC,ETH,SOL,SHIB,DOGE,BNB,ADA,XRP&tsyms=USD",
+        "https://min-api.cryptocompare.com/data/v2/histoday?fsym=ETH&tsym=USD&limit=2000",
+        "https://min-api.cryptocompare.com/data/v2/histoday?fsym=BTC&tsym=USD&limit=2000",
+        "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,SOL,SHIB,DOGE,BNB,ADA,XRP&tsyms=USD",
+        "/api/contact/"
+      ],
+      "cacheConfig": {
+        "maxSize": 30,
+        "maxAge": "10h",
+        "timeout": "10s",
+        "strategy": "freshness"
+      }
+    }
   ]
 }

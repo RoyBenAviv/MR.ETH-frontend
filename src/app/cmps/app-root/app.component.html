@@ -14,9 +14,12 @@
         </li>
         <li>
           <a class="nav-btn" routerLink="contacts" routerLinkActive="active">
-            <img *ngIf="lightmode" src="../../../assets/images/trade-dark.png" />
             <img
-            *ngIf="!lightmode"
+              *ngIf="lightmode"
+              src="../../../assets/images/trade-dark.png"
+            />
+            <img
+              *ngIf="!lightmode"
               src="../../../assets/images/trade.png"
             /><span>Trade</span></a
           >
@@ -24,10 +27,13 @@
         <li>
           <a class="nav-btn" routerLink="dashboard" routerLinkActive="active">
             <img
-            *ngIf="lightmode"
+              *ngIf="lightmode"
               src="../../../assets/images/dashboard-dark.png"
             />
-            <img *ngIf="!lightmode" src="../../../assets/images/dashboard.png" />
+            <img
+              *ngIf="!lightmode"
+              src="../../../assets/images/dashboard.png"
+            />
 
             <span>Dashboard</span></a
           >
@@ -35,7 +41,7 @@
         <li class="deposite-btn" (click)="deposite = true">
           <a class="nav-btn"
             ><img
-            *ngIf="lightmode"
+              *ngIf="lightmode"
               src="../../../assets/images/donate-dark.png"
             />
             <img *ngIf="!lightmode" src="../../../assets/images/donate.png" />
@@ -45,7 +51,7 @@
         <li class="logout" (click)="logout()">
           <a class="nav-btn"
             ><img
-            *ngIf="lightmode"
+              *ngIf="lightmode"
               src="../../../assets/images/logout-dark.png"
             />
             <img *ngIf="!lightmode" src="../../../assets/images/logout.png" />

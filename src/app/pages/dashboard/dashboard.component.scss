@@ -18,10 +18,21 @@
           margin-block-end: rem(8px);
           p {
               font-size: rem(14px);
+                @media (max-width: 900px) {
+                    width: 110px;
+                    white-space: nowrap;
+                      text-overflow: ellipsis;
+                      overflow: hidden; 
+                }
+                @media (max-width: 740px) {
+                    width: 100%;
+                }
           }
           span {
               font-size: rem(14px);
-          }
+            white-space: nowrap;
+            gap: rem(80px);
+            }
       }
   }
   h1 {
@@ -49,10 +60,21 @@
         "wiki wiki wiki wiki";
         padding: 0 rem(10px);
     }
-    @media (max-width: 730px) {
+    @media (max-width: 820px) {
         grid-template-areas:
         "mp mp mp mp"
         "info info bc bc"
+        "pie pie pie pie"
+        "vs vs vs vs"
+        "bars bars bars bars"
+        "wiki wiki wiki wiki";
+    }
+
+    @media (max-width: 740px) {
+        grid-template-areas:
+        "mp mp mp mp"
+        "info info info info"
+        "bc bc bc bc"
         "pie pie pie pie"
         "vs vs vs vs"
         "bars bars bars bars"
